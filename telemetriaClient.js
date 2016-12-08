@@ -29,7 +29,7 @@ iracing.on('Connected', function () {
 	for(var i in data){
 		datosTelemetria[i]=[]
 	}
-  })
+  }) 
 	iracing.on('SessionInfo', function (data) {
 		//console.log('Telemetry:',data.data.CarSetup)
 		socket.emit("CarSetup",data.data.CarSetup)
