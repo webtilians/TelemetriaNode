@@ -62,11 +62,11 @@ else {
 
 
 function findServerInLan(ip) {
+    var ip = ip || '192.168.0.1';
     if (ip.split('.').length != 4) {
         console.log('IPv6 not supported.');
         return false;
     }
-    var ip = ip || '192.168.0.1';
     console.log('Searching network ' + ip + '/24 for a valid server.');
     var aip = ip.split('.');
     aip.pop();
