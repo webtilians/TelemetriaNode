@@ -1,10 +1,7 @@
 var io = require('socket.io')(2389);
 console.log("hola telemetricos");
 var aSockets = {};
-if (aSockets[idUserto]) {
-    message.id = id;
-    aSockets[idUserto].emit('socketNewMsg', message);
-}
+
 io.on('connection', function (socket) {
     
     aSockets[data.idUser] = socket;
