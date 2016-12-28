@@ -1,0 +1,122 @@
+@import 'https://fonts.googleapis.com/css?family=Oswald';
+
+
+
+
+pre {
+	background: lighten(#141517, 4%);
+	color: #ABB2BF;
+	font-weight: 500;
+	font-size: 16px;
+	padding: 15px;
+	border-radius: 5px;
+	margin-bottom: 25px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.speedometer-container {
+	display: inline-block;
+	position: relative;
+	margin-top: 15px;
+	padding-left: 25px;
+	&:after {
+		position: relative;
+		display: block;
+		content: '';
+
+	
+		background: linear-gradient(to bottom, #1c1d20 0%, #141517 80%, #141517 100%);
+		box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16), 0 -3px 6px rgba(0, 0, 0, 0.23);
+		z-index: 4;
+	}
+}
+
+.speed-limit {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	width: 55px;
+	height: 75px;
+	align-items: center;
+	border: 3px solid darken(#141517, 5%);
+	border-radius: 10px;
+	background: #dcdcdc;
+	color: #141517;
+	text-align: center;
+	font-size: 8px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	transform: translateY(-50%);
+	z-index: 3;
+	opacity: 0;
+	transform: scale(0.5);
+	transition: all 0.5s;
+	&.visible {
+		opacity: 1;
+		transform: scale(1);
+	}
+	.limit-label {
+		margin-top: 8px;
+		font-size: 1.4em;
+		font-weight: 700;
+		line-height: 1;
+		margin-bottom: 3px;
+	}
+	.limit-text {
+		font-size: 3em;
+		line-height: 1;
+		font-family: 'Oswald';
+	}
+}
+
+.speedometer {
+	position: relative;
+	width: 300px;
+	height: 150px;
+	margin-left: 25px;
+	border-radius: 150px 150px 0 0;
+	overflow: hidden;
+	box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px, inset rgba(0, 0, 0, 0.3) 0 1px 3px;
+	.speedometer-speed {
+		position: absolute;
+		width: 150px;
+		text-align: center;
+		bottom: 15px;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 70px;
+		line-height: 1;
+		font-family: 'Oswald';
+		text-shadow: 0 3px rgba(0, 0, 0, 0.8);
+		z-index: 2;
+		.speed-text {
+			margin-bottom: 5px;
+		}
+		.speed-label {
+			font-size: 16px;
+		}
+	}
+	&:before {
+		position: absolute;
+		left: 20px;
+		top: 20px;
+		content: '';
+		width: 260px;
+		height: 260px;
+		border-radius: 50%;
+		background: lighten(#141517, 2%);
+		box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.12), 0 -1px 2px rgba(0, 0, 0, 0.24);
+		z-index: 1;
+	}
+	.speedometer-progress {
+		position: relative;
+		width: 300px;
+		height: 100px;
+		border-radius: 50%;
+		border: 20px solid #f00;
+		border-color: transparent transparent #f00 #f00;
+		transform: rotate(-45deg);
+		transition: all 0.2s;
+	}
+}

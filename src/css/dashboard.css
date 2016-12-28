@@ -1,0 +1,79 @@
+.fondo{
+font-family: 'Orbitron', sans-serif;
+  background:black;
+  height:100vh;
+}
+.fondoVelocidad{
+  
+}
+.wrap{
+  display: inline-flex;;
+
+  background: #77b5ca;
+background: -moz-linear-gradient(top,  #77b5ca 0%, #368fae 100%);
+background: -webkit-linear-gradient(top,  #77b5ca 0%,#368fae 100%);
+background: linear-gradient(to bottom,  #77b5ca 0%,#368fae 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#77b5ca', endColorstr='#368fae',GradientType=0 );
+
+  border-radius:  10%  ;
+  -moz-border-radius: 10%   ;
+  -webkit-border-radius: 10%   ;
+
+  align-items: center;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 73px 5px rgba(78,150,189,1);
+-moz-box-shadow: 0px 0px 73px 5px rgba(78,150,189,1);
+box-shadow: 0px 0px 73px 5px rgba(78,150,189,1);
+}
+.wrapGear{
+
+}
+.wrapSessionEnd{
+
+}
+.wrapSesStart{
+
+}
+.wrapTrackTemp{
+
+}
+.wrapSterW{
+
+}
+.wrapAirTemp{
+
+}
+.wrapWinDir{
+
+}
+.wrapRH{
+
+}
+.wrapFL{
+
+}
+.wrapWT{
+
+}
+.wrapFusePH{
+
+}
+.velocidad{
+text-shadow: 0px -5px 12px rgba(69,90,255, 1);
+  text-align: center;
+display: block;
+float: left;
+width: 100%;
+font-size: 164px;
+font-weight: bold;
+
+}
+.gear{
+  text-align: center;
+display: block;
+float: left;
+width: 100%;
+font-size: 124px;
+font-weight: bold;
+text-shadow: 0px -5px 12px rgba(69, 195, 241, 1);
+}

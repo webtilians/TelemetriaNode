@@ -1,0 +1,10 @@
+.velocidad{
+
+  text-align: center;
+display: block;
+float: left;
+width: 100%;
+font-size: 64px;
+font-weight: bold;
+text-shadow: 1PX 1PX 4PX #000;
+}
