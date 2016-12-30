@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './css/App.css';
-
+import Telemetry from './components/Telemetry'
 import socket from 'socket.io-client'
 import DashBoard from './components/DashBoard'
 let sock = socket('http://vps259018.ovh.net:2389');
-const id='12xc1x23xzk'
+const id='pepitogrillo'
 let w = window.innerWidth;
 let h = window.innerHeight;
 
@@ -58,13 +58,18 @@ class App extends Component {
     })
     sock.emit('connectUser',{id:id})
   }
+  _cambiarView(string){
+
+  }
   render() {
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <button onClick={()=>this._cambiarView.bind('dashboard')}>DASBOARD</button>
+        <button onClick={()=>this._cambiarView.bind('telemetry')}>TELEMETRY</button>
         </div>
+        <Telemetry/>
         <DashBoard
           heightBrake={this.state.heightBrake}
           widthBrake={this.state.widthBrake}
