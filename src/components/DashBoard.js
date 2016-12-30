@@ -1,5 +1,4 @@
 import React, { Component} from 'react';
-import ReactDOM from 'react-dom'
 import Speed from './dashboard/Speed'
 import Gear from './dashboard/Gear'
 import SessionTime from './dashboard/SessionTime'
@@ -18,17 +17,15 @@ import Brake from './dashboard/Brake'
 import Cluth from './dashboard/Cluth'
 import Acel from './dashboard/Acel'
 import '../css/dashboard.css'
-var dragged;
-var placeholder = document.createElement("div");
-placeholder.className = "placeholder";
+
      export default class DashBoard extends Component {
        constructor(props) {
          super(props);
          this.state={
-
+             
          }
 
-
+         
        }
        componentDidMount(){
 
@@ -36,9 +33,11 @@ placeholder.className = "placeholder";
 
        render() {
       //  console.log(JSON.parse(this.props.datos.datos["Speed"]))
-
+     
+     
          return (
            <div className='fondo'>
+   <button onClick={() => this.props.cambiarView('telemetry')}>telemetria</button>
            <div
              className='wrap wrapSesStart'
              style={{width:this.props.widthSesStart,height:this.props.heightSesStart}}>
@@ -56,14 +55,9 @@ placeholder.className = "placeholder";
              ref='divVel'
               className="wrap fondoVelocidad"
                style={{width:this.props.widthSpeed,height:this.props.heightSpeed}}>
-           <Speed velocidad={this.props.datos.Speed}/>
+               <Speed velocidad={this.props.speed}/>
            </div>
-           <div
-             className="wrap wrapSterW"
-             style={{width:this.props.widthSW,height:this.props.heightSW}}>
-             <a style={{color:"black",fontSize:10}}>SteeringWhellAngle</a>
-           <SteeringWheelAngle steeringWheelAngle={this.props.datos.SteeringWheelAngle} />
-           </div>
+          
            <div
              className='wrap wrapGear'
              style={{width:this.props.widthGear,height:this.props.heightGear}}>
@@ -114,17 +108,23 @@ placeholder.className = "placeholder";
            <div className='wrap wrapCluth'
              style={{width:this.props.widthCluth,height:this.props.heightCluth}}>
              <a style={{color:"black",fontSize:10}}>CLuth</a>
-           <Cluth fuelUse={this.props.datos.FuelUsePerHour}/>
+           <Cluth cluth={this.props.datos.Cluth}/>
            </div>
            <div className='wrap wrapBrake'
              style={{width:this.props.widthBrake,height:this.props.heightBrake}}>
              <a style={{color:"black",fontSize:10}}>Brake</a>
-           <Brake fuelUse={this.props.datos.FuelUsePerHour}/>
+           <Brake brake={this.props.datos.Brake}/>
            </div>
            <div className='wrap wrapAcel'
              style={{width:this.props.widthAcel,height:this.props.heightAcel}}>
              <a style={{color:"black",fontSize:10}}>Acel</a>
-           <Acel fuelUse={this.props.datos.FuelUsePerHour}/>
+           <Acel throle={this.props.datos.Throttle}/>
+           </div>
+            <div
+             className="wrap wrapSterW"
+             style={{width:this.props.widthSW,height:this.props.heightSW}}>
+             <a style={{color:"black",fontSize:10}}>SteeringWhellAngle</a>
+           <SteeringWheelAngle steeringWheelAngle={this.props.datos.SteeringWheelAngle} />
            </div>
            </div>
          );
