@@ -3,31 +3,28 @@ console.log("hola telemetricos");
 var aSockets = {};
 var equipos={};
 var aPcConectados=[];
-
+var room;
    // aSockets[idUserto].emit('socketNewMsg', message);
-
+var rooms={}
 io.on('connection', function (socket) {
     socket.on('pcConnected',function(idpc){
-        aSockets[data.idpc]= socket;
-        socket.join(idpc);
+        socket.join(rooms[idpc]);
+        room=idpc;
     });
-    
-    
-    console.log('a user connected->', socket.acks.id);
-    socket.emit("hola", {saludo: "hola"});
-    socket.on('CarSetup', function (data) {
+    socket.on('sessionData', function (data) {
         console.log(data);
+        io.sockets.in(room).emit('sessionDataClient', data);
+        io.emit('sessionDataClient', data);
     });
-    console.log(Object.keys(aSockets));
     socket.on("connectUser", function (data) {
         console.log("conectUser")
         console.log(data.id)
         aSockets[data.id]= socket;
-        socket.join(id);
+        socket.join(data.id);
     });
     socket.on('dashboard', function (data) {
         io.sockets.in(room).emit('dashboardClient', data);
-        
+        io.emit('dashboardClient', data);
     });
     socket.on('disconnect', function () {
         console.log('user disconnected');
